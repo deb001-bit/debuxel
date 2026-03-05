@@ -75,12 +75,10 @@ export async function loginWithOAuth(provider: "google" | "github") {
     });
 
     if (error) {
-        return { error: error.message };
+        return { error: error.message, url: null };
     }
 
-    if (data.url) {
-        redirect(data.url);
-    }
+    return { error: null, url: data.url };
 }
 
 export async function signOut() {

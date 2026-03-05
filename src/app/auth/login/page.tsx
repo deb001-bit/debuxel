@@ -75,7 +75,11 @@ export default function LoginPage() {
                         <Button
                             variant="outline"
                             className="h-12 rounded-xl border-subtle-border/50 hover:bg-surface font-medium text-sm"
-                            onClick={() => loginWithOAuth("google")}
+                            onClick={async () => {
+                                const result = await loginWithOAuth("google");
+                                if (result?.url) window.location.href = result.url;
+                                if (result?.error) setError(result.error);
+                            }}
                         >
                             <svg className="w-4 h-4 mr-2" viewBox="0 0 24 24">
                                 <path
@@ -100,7 +104,11 @@ export default function LoginPage() {
                         <Button
                             variant="outline"
                             className="h-12 rounded-xl border-subtle-border/50 hover:bg-surface font-medium text-sm"
-                            onClick={() => loginWithOAuth("github")}
+                            onClick={async () => {
+                                const result = await loginWithOAuth("github");
+                                if (result?.url) window.location.href = result.url;
+                                if (result?.error) setError(result.error);
+                            }}
                         >
                             <svg
                                 className="w-4 h-4 mr-2"
