@@ -19,6 +19,8 @@ import {
   Layers,
   Search,
   Cpu,
+  PlayCircle,
+  MessagesSquare
 } from "lucide-react";
 
 /* Floating pill icons mapped to tool slugs */
@@ -38,94 +40,61 @@ export default function HomePage() {
       <Navbar />
       <main>
         {/* ===== Hero Section ===== */}
-        <section className="relative overflow-hidden pt-28 pb-20 md:pt-36 md:pb-28">
-          {/* Gradient blobs */}
-          <div className="gradient-blob-pink w-[500px] h-[500px] -left-20 top-10" />
-          <div className="gradient-blob-blue w-[500px] h-[500px] -right-20 top-20" />
-          <div className="gradient-blob-purple w-[400px] h-[400px] left-1/2 -translate-x-1/2 bottom-0" />
+        <section className="relative overflow-visible pt-24 pb-24 md:pt-40 md:pb-32">
+          {/* Subtle Background Glows */}
+          <div className="gradient-blob-pink w-[600px] h-[600px] -left-32 top-0" />
+          <div className="gradient-blob-blue w-[700px] h-[700px] right-0 top-10" />
 
-          <div className="container-main relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              {/* Badge */}
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-surface mb-8">
-                <span className="w-2 h-2 rounded-full bg-accent-blue animate-pulse" />
-                <span className="text-xs font-medium text-text-700">
-                  ✨ Introducing AI Developer Toolkit
-                </span>
+          <div className="container-main relative z-10 text-center">
+
+            {/* Top Micro-stats */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-12 opacity-90">
+              <div className="text-left">
+                <p className="text-5xl md:text-7xl font-bold tracking-tighter text-text-900 leading-none mb-1">100+</p>
+                <p className="text-sm font-medium tracking-wide text-muted-text">early adopters</p>
               </div>
+              <div className="text-left">
+                <p className="text-5xl md:text-7xl font-bold tracking-tighter text-text-900 leading-none mb-1">24/7</p>
+                <p className="text-sm font-medium tracking-wide text-muted-text">AI availability</p>
+              </div>
+            </div>
 
-              {/* Headline */}
-              <h1 className="text-4xl md:text-6xl lg:text-[72px] font-bold text-text-900 leading-[1.05] tracking-tight mb-6">
-                AI{" "}
-                <span className="inline-flex items-center">
-                  <span className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-accent-blue flex items-center justify-center mx-1.5">
-                    <Zap className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </span>
-                </span>{" "}
-                Developer Tools.
-                <br />
-                <span className="gradient-text">Super Results.</span>
+            {/* Massive Headline */}
+            <div className="relative inline-block max-w-5xl mx-auto mb-16">
+              <h1
+                className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] font-bold text-text-900 leading-[0.9] tracking-tighter"
+                style={{ letterSpacing: "-0.04em" }}
+              >
+                good tools<br />
+                drive <span className="inline-flex items-center justify-center bg-accent-warm text-white rounded-3xl w-[0.8em] h-[0.8em] mx-2 shadow-action -rotate-6"><Zap className="w-1/2 h-1/2 fill-current" /></span> growth
               </h1>
 
-              {/* Subtitle */}
-              <p className="text-base md:text-lg text-text-700 leading-relaxed max-w-xl mx-auto">
-                Free AI-powered tools for debugging, code explanation, and
-                documentation. Available 24/7, across every framework.
+              {/* Floating Action Pill 1 */}
+              <div className="absolute -top-10 -right-10 md:-top-20 md:-right-32 btn-action-float bg-accent-action px-8 py-5 md:px-12 md:py-8 flex items-center gap-3 z-20 animate-float">
+                <span className="text-3xl md:text-6xl font-semibold tracking-tight">Watch</span>
+                <PlayCircle className="w-8 h-8 md:w-12 md:h-12 fill-white/20" />
+              </div>
+
+              {/* Floating Action Pill 2 */}
+              <div className="absolute -bottom-8 -left-4 md:-bottom-12 md:-left-20 btn-action-float bg-accent-blue-deep px-8 py-4 md:px-10 md:py-6 flex items-center gap-3 z-20 animate-float-reverse" style={{ transform: 'rotate(5deg)' }}>
+                <MessagesSquare className="w-6 h-6 md:w-8 md:h-8 fill-white/20" />
+                <span className="text-2xl md:text-4xl font-semibold tracking-tight">explore</span>
+              </div>
+            </div>
+
+            {/* Subtitle Card */}
+            <div className="max-w-3xl mx-auto bg-surface border border-subtle-border rounded-full py-6 px-10 shadow-sm mt-8">
+              <p className="text-lg text-text-700 leading-relaxed font-medium">
+                Access real-time AI solutions for debugging, generating APIs, and explaining complex <br className="hidden md:block" />codebases — researched, validated, and ready to fuel your productivity.
               </p>
             </div>
 
-            {/* ===== Central Card with Floating Pills ===== */}
-            <div className="relative max-w-2xl mx-auto mb-8">
-              {/* Central card */}
-              <div className="mx-auto w-44 h-44 md:w-52 md:h-52 glass-card rounded-3xl flex flex-col items-center justify-center gap-3 shadow-lg">
-                <Image
-                  src="/logo.png"
-                  alt="Debuxel"
-                  width={56}
-                  height={56}
-                  className="drop-shadow-md"
-                />
-                <span className="text-sm font-bold text-text-900 tracking-tight">
-                  DEBUXEL
-                </span>
-                <Link
-                  href="/auth/signup"
-                  className="text-xs font-medium text-white bg-accent-blue hover:bg-accent-blue-deep px-4 py-1.5 rounded-full transition-colors duration-200"
-                >
-                  Get Started
-                </Link>
-              </div>
-
-              {/* Floating Feature Pills */}
-              {tools.slice(0, 6).map((tool, i) => {
-                const Icon = pillIcons[tool.slug] || Zap;
-                const positions = [
-                  "left-0 top-4 md:-left-8 md:top-6",
-                  "left-2 bottom-0 md:-left-4 md:bottom-4",
-                  "left-1/2 -translate-x-1/2 -bottom-10",
-                  "right-0 top-4 md:-right-8 md:top-6",
-                  "right-2 bottom-0 md:-right-4 md:bottom-4",
-                  "right-1/4 -top-8 md:right-1/4 md:-top-6",
-                ];
-                const delays = [
-                  "animate-float",
-                  "animate-float-reverse",
-                  "animate-float-slow",
-                  "animate-float-reverse",
-                  "animate-float",
-                  "animate-float-slow",
-                ];
-                return (
-                  <div
-                    key={tool.slug}
-                    className={`absolute feature-pill ${positions[i]} ${delays[i]} hidden sm:inline-flex`}
-                  >
-                    <Icon className="w-4 h-4 text-accent-blue" />
-                    <span>{tool.shortName}</span>
-                  </div>
-                );
-              })}
+            <div className="mt-12 flex justify-center gap-4">
+              <Button size="lg" className="bg-charcoal hover:bg-black text-white px-10 rounded-full text-lg shadow-lg hover:-translate-y-1 transition-transform" asChild>
+                <Link href="/auth/signup">Get a demo</Link>
+              </Button>
             </div>
+
           </div>
         </section>
 
@@ -151,117 +120,102 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ===== Feature Showcase – Chat Demo ===== */}
-        <section className="py-20 md:py-28 relative overflow-hidden">
-          <div className="gradient-blob-blue w-[400px] h-[400px] -right-32 top-1/2 -translate-y-1/2" />
+        {/* ===== Feature Showcase / Bento Grid ===== */}
+        <section className="py-24 md:py-32 relative overflow-hidden bg-bg-90">
           <div className="container-main relative z-10">
-            <div className="text-center mb-14">
-              <p className="text-xs font-semibold text-accent-blue uppercase tracking-widest mb-3">
-                Discover Your AI Workforce
-              </p>
-              <h2 className="text-3xl md:text-[48px] font-bold text-text-900 leading-[1.1] mb-4">
-                Transform{" "}
-                <span className="inline-flex items-center">
-                  <span className="w-8 h-8 rounded-lg bg-accent-blue flex items-center justify-center mx-1">
-                    <Zap className="w-4 h-4 text-white" />
-                  </span>
-                </span>{" "}
-                your workflow
-                <br />
-                with the AI{" "}
-                <span className="gradient-text">Developer Toolkit</span>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-text-900 tracking-tight leading-[1] mb-6">
+                All you need to reach the right<br className="hidden md:block" />
+                <span className="text-text-700">code — powered by AI</span>
               </h2>
-              <p className="text-base text-text-700 max-w-lg mx-auto">
-                Empower your coding with Debuxel&apos;s specialized AI tools that
-                understand your code, debug issues, and generate documentation automatically.
-              </p>
             </div>
 
-            {/* Chat Demo Mockup */}
-            <div className="max-w-2xl mx-auto">
-              <div className="glass-card rounded-2xl p-6 md:p-8">
-                <div className="flex items-center gap-2 mb-6">
-                  <div className="w-3 h-3 rounded-full bg-red-400/60" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
-                  <div className="w-3 h-3 rounded-full bg-green-400/60" />
-                  <span className="ml-2 text-xs text-muted-text">
-                    Debuxel AI Bug Fixer
-                  </span>
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-6xl mx-auto">
+
+              {/* Massive Feature Card 1 */}
+              <div className="md:col-span-7 bg-surface rounded-[2rem] p-10 md:p-14 shadow-sm relative overflow-hidden flex flex-col justify-between min-h-[400px]">
+                <div className="relative z-10 max-w-sm">
+                  <div className="w-12 h-12 rounded-2xl bg-accent-action text-white flex items-center justify-center mb-8 shadow-action">
+                    <Code2 className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-3xl md:text-4xl font-bold text-text-900 tracking-tight leading-tight mb-4">
+                    Unlock 121 million+<br />code snippets & solutions
+                  </h3>
+                  <p className="text-lg text-text-700 leading-relaxed mb-8">
+                    Identify verified solutions across every stack. Gain real-time insights to expand your shipping speed.
+                  </p>
+                  <Button className="bg-charcoal hover:bg-black text-white px-8 rounded-full text-base">Try Now</Button>
                 </div>
 
-                {/* User message */}
-                <div className="flex gap-3 mb-4">
-                  <div className="w-8 h-8 rounded-full bg-bg-90 flex items-center justify-center shrink-0 text-xs font-bold text-text-700">
-                    U
+                {/* Decorative floating elements */}
+                <div className="absolute right-0 bottom-0 md:-right-10 md:-bottom-10 grid grid-cols-2 gap-4 opacity-80 pointer-events-none">
+                  <div className="w-32 h-32 rounded-full bg-blue-50 flex items-center justify-center shadow-lg transform -translate-x-10 translate-y-10"><Brain className="w-12 h-12 text-accent-blue" /></div>
+                  <div className="w-40 h-40 rounded-full bg-purple-50 flex items-center justify-center shadow-lg"><FileText className="w-16 h-16 text-accent-purple" /></div>
+                  <div className="w-36 h-36 rounded-full bg-pink-50 flex items-center justify-center shadow-lg -translate-y-12"><Bug className="w-14 h-14 text-accent-pink" /></div>
+                </div>
+              </div>
+
+              {/* Right Column Stack */}
+              <div className="md:col-span-5 flex flex-col gap-6">
+                {/* Small Feature 1 */}
+                <div className="bg-surface rounded-[2rem] p-8 md:p-10 shadow-sm flex-1 flex flex-col justify-between relative overflow-hidden">
+                  <div className="w-12 h-12 rounded-2xl bg-accent-blue text-white flex items-center justify-center mb-6 shadow-lg shadow-blue-500/20">
+                    <Zap className="w-6 h-6" />
                   </div>
-                  <div className="bg-bg-90 rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]">
-                    <p className="text-sm text-text-700">
-                      I&apos;ve pasted my error. HERE is the error: <code className="text-xs bg-white/60 px-1.5 py-0.5 rounded font-mono">TypeError: Cannot read properties of undefined (reading &apos;map&apos;)</code>. It&apos;s breaking the entire feed, and I&apos;ve noticed it only happens on priority delivery, and I&apos;m clueless.
-                    </p>
+                  <div className="ml-auto w-3/4 bg-bg-90 rounded-2xl p-4 shadow-sm border border-subtle-border mb-6 self-end">
+                    <p className="text-xs text-muted-text mb-1 uppercase font-semibold">Speed</p>
+                    <p className="text-4xl font-bold tracking-tighter">{"< 2s"}</p>
+                    <div className="mt-3 space-y-2">
+                      <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-accent-success"></div><div className="h-2 w-full bg-gray-200 rounded-full"><div className="h-full bg-accent-success rounded-full w-[97%]"></div></div></div>
+                      <div className="flex items-center gap-2"><div className="w-2 h-2 rounded-full bg-accent-success"></div><div className="h-2 w-full bg-gray-200 rounded-full"><div className="h-full bg-accent-success rounded-full w-[100%]"></div></div></div>
+                    </div>
                   </div>
+                  <p className="text-xl text-text-700 tracking-tight leading-snug">Find anyone&apos;s verified email address</p>
                 </div>
 
-                {/* AI response */}
-                <div className="flex gap-3">
-                  <div className="w-8 h-8 rounded-full bg-accent-blue/10 flex items-center justify-center shrink-0">
-                    <Zap className="w-4 h-4 text-accent-blue" />
-                  </div>
-                  <div className="glass-surface rounded-2xl rounded-tl-md px-4 py-3 max-w-[85%]">
-                    <p className="text-sm text-text-700 mb-2">
-                      The variable is <strong>undefined</strong> before the <code className="text-xs bg-white/60 px-1.5 py-0.5 rounded font-mono">.map()</code> call. Here&apos;s the fix:
-                    </p>
-                    <pre className="bg-[#0F172A] text-green-400 text-xs rounded-xl p-3 font-mono overflow-x-auto">
-                      <code>{`// ✅ Add optional chaining\nconst items = data?.items?.map(item => (\n  <FeedItem key={item.id} {...item} />\n)) ?? [];`}</code>
-                    </pre>
+                {/* Small Feature 2 */}
+                <div className="bg-surface rounded-[2rem] p-8 md:p-10 shadow-sm flex-1 relative overflow-hidden">
+                  <h3 className="text-3xl font-bold tracking-tight text-text-900 leading-tight mb-4 w-1/2">Find solutions in seconds</h3>
+                  <p className="text-sm text-text-700 max-w-[180px]">Engage ready-to-use snippets with 414M+ verified answers</p>
+
+                  <div className="absolute right-[-40px] bottom-4 flex -space-x-4">
+                    <div className="w-24 h-24 rounded-full bg-accent-success text-white flex items-center justify-center shadow-lg border-4 border-white z-30"><Shield className="w-10 h-10" /></div>
+                    <div className="w-24 h-24 rounded-full bg-accent-pink text-white flex items-center justify-center shadow-lg border-4 border-white z-20"><Search className="w-10 h-10" /></div>
+                    <div className="w-24 h-24 rounded-full bg-accent-warm text-white flex items-center justify-center shadow-lg border-4 border-white z-10"><Layers className="w-10 h-10" /></div>
                   </div>
                 </div>
               </div>
+
             </div>
+
           </div>
         </section>
 
-        {/* ===== 2×2 Feature Grid ===== */}
-        <section className="py-20 md:py-28 bg-bg-90">
-          <div className="container-main">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-              {[
-                {
-                  icon: Brain,
-                  title: "Surprisingly Accurate",
-                  desc: "Debuxel uses advanced AI to understand every error, code pattern, and architecture choice — delivering actionable, context-aware results in every conversation.",
-                },
-                {
-                  icon: Layers,
-                  title: "Seamless Integration",
-                  desc: "Debuxel integrates with popular developer workflows across every channel, delivering a polished result in every conversation.",
-                },
-                {
-                  icon: Zap,
-                  title: "Lightning Fast",
-                  desc: "Get responses in under 5 seconds. No waiting, no loading bars. Paste your input, get instant AI-powered output — ready to copy and use.",
-                },
-                {
-                  icon: Shield,
-                  title: "Private & Secure",
-                  desc: "Your code stays yours. We don't store inputs, share data, or train models on your code. Real-time processing, zero data retention.",
-                },
-              ].map((feature) => (
-                <div
-                  key={feature.title}
-                  className="glass-card rounded-2xl p-7 card-hover"
-                >
-                  <div className="w-11 h-11 rounded-xl bg-accent-blue/10 flex items-center justify-center mb-5">
-                    <feature.icon className="w-5 h-5 text-accent-blue" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-text-900 mb-2">
-                    {feature.title}
-                  </h3>
-                  <p className="text-sm text-text-700 leading-relaxed">
-                    {feature.desc}
-                  </p>
+        {/* ===== Deep Dive "3x Productivity" Header section ===== */}
+        <section className="py-24 md:py-32 bg-surface text-center px-4">
+          <h2 className="text-5xl md:text-[6rem] lg:text-[7rem] font-bold tracking-tighter leading-[0.9] text-text-900 max-w-6xl mx-auto">
+            Unlock <span className="bg-accent-blue text-white rounded-3xl px-4 py-2 inline-block mx-2 shadow-lg -rotate-3">3x</span> more<br />
+            <span className="text-muted-text">productivity with AI</span>
+          </h2>
+
+          {/* Simple flat features grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16 max-w-5xl mx-auto mt-24 text-left">
+            {[
+              { icon: Search, color: "bg-accent-blue text-white", title: "Prospector", desc: "Find and reach your ideal frameworks with verified data. Access insights from over 121 million repos in seconds." },
+              { icon: Layers, color: "bg-accent-pink text-white", title: "Code Changes", desc: "Track architecture moves easily. Stay updated with new repo info and never lose connection with top projects." },
+              { icon: Zap, color: "bg-accent-action text-white", title: "Builder Intent", desc: "Discover features you are ready to build. Identify intent signals and prioritize high-value code faster." },
+              { icon: Cpu, color: "bg-accent-warm text-white", title: "CRM Integration", desc: "Fill your IDE with verified function profiles. Integrate seamlessly with your favorite tools to boost output." },
+              { icon: Brain, color: "bg-accent-success text-white", title: "Data Enrichment", desc: "Turn any error trace into a complete context record. Enrich your logs automatically with verified AI data." },
+              { icon: FileText, color: "bg-purple-600 text-white", title: "AI Research", desc: "Research any bug or framework in seconds using AI. Get instant, verified insights that keep your codebase ahead." },
+            ].map(f => (
+              <div key={f.title} className="flex flex-col">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-6 shadow-sm ${f.color}`}>
+                  <f.icon className="w-6 h-6" />
                 </div>
-              ))}
-            </div>
+                <h4 className="text-2xl font-bold tracking-tight text-text-900 mb-3">{f.title}</h4>
+                <p className="text-sm text-text-700 leading-relaxed max-w-[280px]">{f.desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -374,69 +328,56 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ===== FAQ ===== */}
-        <section className="py-20 md:py-28 relative overflow-hidden">
-          <div className="gradient-blob-purple w-[300px] h-[300px] -right-20 bottom-10" />
-          <div className="container-main relative z-10">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-[48px] font-bold text-text-900 leading-[1.1] mb-4">
-                Frequently Asked Questions
-              </h2>
-              <p className="text-base text-text-700 max-w-lg mx-auto">
-                Get answers to commonly asked questions about our AI tools.
-              </p>
-            </div>
-            <FAQSection />
-          </div>
-        </section>
-
-        {/* ===== Recommended Tools (Affiliate) ===== */}
-        <section className="py-20 md:py-28 bg-bg-90">
+        {/* ===== Final CTA / accuracy ===== */}
+        <section className="py-24 md:py-32 bg-bg-90">
           <div className="container-main">
-            <div className="text-center mb-14">
-              <h2 className="text-3xl md:text-[48px] font-bold text-text-900 leading-[1.1] mb-4">
-                Tools we recommend
-              </h2>
-              <p className="text-base text-text-700 max-w-lg mx-auto">
-                Trusted developer tools that pair perfectly with Debuxel.
-              </p>
-            </div>
-            <RecommendedTools />
-          </div>
-        </section>
+            <div className="max-w-6xl mx-auto bg-surface rounded-[3rem] p-10 md:p-20 shadow-sm relative overflow-hidden">
+              <div className="absolute top-8 left-8 bg-surface-2 px-4 py-2 rounded-full text-xs font-semibold text-text-900 flex items-center gap-2 border border-subtle-border">
+                <Zap className="w-3 h-3" /> Accuracy
+              </div>
 
-        {/* ===== Final CTA ===== */}
-        <section className="py-20 md:py-28 relative overflow-hidden">
-          <div className="gradient-blob-pink w-[400px] h-[400px] left-0 top-0" />
-          <div className="gradient-blob-blue w-[400px] h-[400px] right-0 bottom-0" />
+              <div className="grid md:grid-cols-2 gap-16 items-center mt-12">
+                <div>
+                  <h2 className="text-4xl md:text-[3.5rem] font-bold text-text-900 leading-[1.05] tracking-tight mb-6">
+                    AI-powered accuracy<br />before it was cool
+                  </h2>
 
-          <div className="container-main relative z-10 text-center">
-            <h2 className="text-3xl md:text-[48px] font-bold text-text-900 leading-[1.1] mb-4">
-              Start Building Smarter
-            </h2>
-            <p className="text-base text-text-700 max-w-lg mx-auto mb-8">
-              Join thousands of developers using Debuxel to debug, document, and
-              design. Completely free, forever.
-            </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button
-                size="lg"
-                className="h-12 px-8 rounded-xl btn-primary-gradient text-base font-semibold"
-                asChild
-              >
-                <Link href="/auth/signup">
-                  Get Started Free
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </Button>
-              <Button
-                variant="ghost"
-                size="lg"
-                className="h-12 px-8 rounded-xl text-base font-medium text-text-700 border border-subtle-border/50 hover:bg-white/60"
-                asChild
-              >
-                <Link href="/products">Explore Tools</Link>
-              </Button>
+                  <div className="relative w-64 h-64 mt-12 mb-4">
+                    {/* Decoration avatars / circles */}
+                    <div className="w-48 h-48 bg-accent-warm rounded-full absolute bottom-0 right-0" />
+                    <div className="w-40 h-40 bg-surface rounded-full shadow-lg border-8 border-bg-90 absolute top-0 flex items-center justify-center">
+                      <span className="text-6xl font-black text-text-900 tracking-tighter">a</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="relative">
+                  <p className="text-base text-text-700 leading-relaxed max-w-sm mb-16">
+                    Debuxel is the world&apos;s first real-time intelligence engine for developers. Combining advanced AI with a continuously verified data engine, we deliver the most precise and reliable structural information on the market.
+                  </p>
+
+                  <div className="absolute -top-10 md:top-10 -right-4 md:-right-24 btn-action-float bg-accent-action px-10 py-6 text-5xl md:text-7xl font-bold tracking-tighter text-white rotate-6 hover:rotate-12 transition-transform shadow-action z-10 w-max">
+                    contacts
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-16 pt-10 border-t border-subtle-border flex flex-col md:flex-row items-center justify-between gap-6">
+                <p className="text-xs text-muted-text max-w-sm">
+                  By submitting this form, you acknowledge and agree to our Terms of Use and Privacy Policy, and allow us to send you helpful updates.
+                </p>
+
+                <form className="flex w-full md:max-w-md relative bg-surface-2 rounded-full p-1.5 focus-within:ring-2 focus-within:ring-charcoal transition-all border border-subtle-border">
+                  <input
+                    type="email"
+                    placeholder="Business Email"
+                    className="bg-transparent flex-1 px-4 py-3 outline-none text-sm text-text-900 placeholder:text-muted-text"
+                  />
+                  <Button className="bg-charcoal hover:bg-black text-white rounded-full px-8 shrink-0">
+                    Join Free
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </section>

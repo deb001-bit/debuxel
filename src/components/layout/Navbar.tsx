@@ -19,29 +19,22 @@ export function Navbar() {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50">
-            <div className="container-main pt-3">
-                <nav className="flex items-center justify-between h-14 px-5 rounded-2xl glass-surface">
+            <div className="container-main pt-6">
+                <nav className="flex items-center justify-between h-16 px-6 md:px-8 bg-surface rounded-full shadow-sm border border-subtle-border mx-auto max-w-6xl">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group shrink-0">
-                        <Image
-                            src="/logo.png"
-                            alt="Debuxel"
-                            width={28}
-                            height={28}
-                            className="group-hover:scale-105 transition-transform duration-200"
-                        />
-                        <span className="text-lg font-bold text-text-900 tracking-tight">
-                            Debuxel
+                        <span className="text-xl font-bold tracking-tighter text-text-900 group-hover:-translate-y-0.5 transition-transform duration-200">
+                            Debux<span className="text-accent-blue font-black">AI</span>
                         </span>
                     </Link>
 
                     {/* Center Navigation */}
-                    <div className="hidden md:flex items-center gap-1">
+                    <div className="hidden md:flex items-center gap-6">
                         {navLinks.map((link) => (
                             <Link
                                 key={link.href}
                                 href={link.href}
-                                className="text-sm font-medium text-text-700 hover:text-text-900 px-4 py-2 rounded-xl hover:bg-white/60 transition-all duration-200"
+                                className="text-sm font-medium text-text-700 hover:text-text-900 transition-colors duration-200"
                             >
                                 {link.label}
                             </Link>
@@ -49,19 +42,18 @@ export function Navbar() {
                     </div>
 
                     {/* Right Auth */}
-                    <div className="hidden md:flex items-center gap-2 shrink-0">
+                    <div className="hidden md:flex items-center gap-4 shrink-0">
+                        <Link
+                            href="/auth/login"
+                            className="text-sm font-medium text-text-700 hover:text-text-900 transition-colors"
+                        >
+                            Log in
+                        </Link>
                         <Button
-                            variant="ghost"
-                            className="text-sm font-medium text-text-700 hover:text-text-900 h-9 px-4 rounded-xl"
+                            className="text-sm font-medium h-10 px-6 rounded-full bg-charcoal hover:bg-black text-white"
                             asChild
                         >
-                            <Link href="/auth/login">Sign in</Link>
-                        </Button>
-                        <Button
-                            className="text-sm font-semibold h-9 px-5 rounded-xl btn-primary-gradient"
-                            asChild
-                        >
-                            <Link href="/auth/signup">Get Started</Link>
+                            <Link href="/auth/signup">Get a demo</Link>
                         </Button>
                     </div>
 
@@ -94,15 +86,15 @@ export function Navbar() {
                                     asChild
                                 >
                                     <Link href="/auth/login" onClick={() => setIsOpen(false)}>
-                                        Sign in
+                                        Log in
                                     </Link>
                                 </Button>
                                 <Button
-                                    className="text-base font-semibold h-12 rounded-xl btn-primary-gradient"
+                                    className="text-base font-semibold h-12 rounded-full bg-charcoal text-white"
                                     asChild
                                 >
                                     <Link href="/auth/signup" onClick={() => setIsOpen(false)}>
-                                        Get Started
+                                        Get a demo
                                     </Link>
                                 </Button>
                             </div>
