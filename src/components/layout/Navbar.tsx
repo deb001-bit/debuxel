@@ -23,9 +23,14 @@ export function Navbar() {
                 <nav className="flex items-center justify-between h-16 px-6 md:px-8 bg-surface rounded-full shadow-sm border border-subtle-border mx-auto max-w-6xl">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 group shrink-0">
-                        <span className="text-xl font-bold tracking-tighter text-text-900 group-hover:-translate-y-0.5 transition-transform duration-200">
-                            Debux<span className="text-accent-blue font-black">AI</span>
-                        </span>
+                        <Image
+                            src="/Debuxel-Single-Logo.png"
+                            alt="Debuxel Logo"
+                            width={120}
+                            height={32}
+                            className="group-hover:-translate-y-0.5 transition-transform duration-200 h-8 w-auto"
+                            priority
+                        />
                     </Link>
 
                     {/* Center Navigation */}

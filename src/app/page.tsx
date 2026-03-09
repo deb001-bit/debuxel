@@ -69,17 +69,11 @@ export default function HomePage() {
                 drive <span className="inline-flex items-center justify-center bg-accent-warm text-white rounded-3xl w-[0.8em] h-[0.8em] mx-2 shadow-action -rotate-6"><Zap className="w-1/2 h-1/2 fill-current" /></span> growth
               </h1>
 
-              {/* Floating Action Pill 1 */}
-              <div className="absolute -top-10 -right-10 md:-top-20 md:-right-32 btn-action-float bg-accent-action px-8 py-5 md:px-12 md:py-8 flex items-center gap-3 z-20 animate-float">
-                <span className="text-3xl md:text-6xl font-semibold tracking-tight">Watch</span>
-                <PlayCircle className="w-8 h-8 md:w-12 md:h-12 fill-white/20" />
-              </div>
-
-              {/* Floating Action Pill 2 */}
-              <div className="absolute -bottom-8 -left-4 md:-bottom-12 md:-left-20 btn-action-float bg-accent-blue-deep px-8 py-4 md:px-10 md:py-6 flex items-center gap-3 z-20 animate-float-reverse" style={{ transform: 'rotate(5deg)' }}>
+              {/* Floating Action Pill 2 (Explore) */}
+              <Link href="/products" className="absolute -bottom-8 -left-4 md:-bottom-12 md:-left-20 btn-action-float bg-accent-blue-deep px-8 py-4 md:px-10 md:py-6 flex items-center gap-3 z-20 animate-float-reverse cursor-pointer" style={{ transform: 'rotate(5deg)' }}>
                 <MessagesSquare className="w-6 h-6 md:w-8 md:h-8 fill-white/20" />
-                <span className="text-2xl md:text-4xl font-semibold tracking-tight">explore</span>
-              </div>
+                <span className="text-2xl md:text-4xl font-semibold tracking-tight text-white hover:text-white/90 transition-colors">explore</span>
+              </Link>
             </div>
 
             {/* Subtitle Card */}
@@ -356,9 +350,9 @@ export default function HomePage() {
                     Debuxel is the world&apos;s first real-time intelligence engine for developers. Combining advanced AI with a continuously verified data engine, we deliver the most precise and reliable structural information on the market.
                   </p>
 
-                  <div className="absolute -top-10 md:top-10 -right-4 md:-right-24 btn-action-float bg-accent-action px-10 py-6 text-5xl md:text-7xl font-bold tracking-tighter text-white rotate-6 hover:rotate-12 transition-transform shadow-action z-10 w-max">
+                  <Link href="/contact" className="absolute -top-10 md:top-10 -right-4 md:-right-24 btn-action-float bg-accent-action px-10 py-6 text-5xl md:text-7xl font-bold tracking-tighter text-white rotate-6 hover:rotate-12 transition-transform shadow-action z-10 w-max cursor-pointer">
                     contacts
-                  </div>
+                  </Link>
                 </div>
               </div>
 
